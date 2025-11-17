@@ -2,6 +2,12 @@
 
 O TimeWise é uma aplicação que permite que usuários criem e gerenciem hábitos como pausas, postura e hidratação durante o trabalho.
 
+## ✍️ Integrantes
+
+- [Letícia Zago de Souza](https://www.linkedin.com/in/letícia-zago-de-souza)
+- [Ana Carolina Reis Santana](https://www.linkedin.com/in/ana-carolina-santana-9a0a78232)
+- [Pedro Henrique Mendonça de Novais](https://www.linkedin.com/in/pedroonovais)
+
 ## 🚀 Tecnologias
 
 - **.NET 8.0**
@@ -264,4 +270,3 @@ Implementado com **OpenTelemetry** para rastreamento distribuído:
    dotnet run
    ```
 5. **Acesse o Swagger**: `https://localhost:XXXX/swagger`
-
