@@ -1,0 +1,6 @@
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Tests\obj\Debug\net8.0\TimeWise.Tests.csproj.AssemblyReference.cache
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Tests\obj\Debug\net8.0\MvcTestingAppManifest.json
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Tests\obj\Debug\net8.0\TimeWise.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Tests\obj\Debug\net8.0\TimeWise.Tests.AssemblyInfoInputs.cache
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Tests\obj\Debug\net8.0\TimeWise.Tests.AssemblyInfo.cs
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Tests\obj\Debug\net8.0\TimeWise.Tests.csproj.CoreCompileInputs.cache

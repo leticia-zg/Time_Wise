@@ -1,0 +1,11 @@
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\bin\Debug\net8.0\TimeWise.Core.deps.json
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\bin\Debug\net8.0\TimeWise.Core.dll
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\bin\Debug\net8.0\TimeWise.Core.pdb
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net8.0\TimeWise.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net8.0\TimeWise.Core.AssemblyInfoInputs.cache
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net8.0\TimeWise.Core.AssemblyInfo.cs
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net8.0\TimeWise.Core.csproj.CoreCompileInputs.cache
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net8.0\TimeWise.Core.dll
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net8.0\refint\TimeWise.Core.dll
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net8.0\TimeWise.Core.pdb
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net8.0\ref\TimeWise.Core.dll

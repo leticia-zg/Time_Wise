@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TimeWise.API</name>
+    </assembly>
+    <members>
+        <member name="T:TimeWise.API.Controllers.v1.HabitsController">
+            <summary>
+            Habits
+            </summary>
+        </member>
+        <member name="M:TimeWise.API.Controllers.v1.HabitsController.Create(TimeWise.API.Dtos.HabitCreateDto,System.Threading.CancellationToken)">
+            <summary>
+            Cria um novo hábito
+            </summary>
+            <param name="dto">Dados do hábito a ser criado</param>
+            <param name="ct">Token de cancelamento</param>
+            <returns>Hábito criado com links HATEOAS</returns>
+            <response code="201">Hábito criado com sucesso</response>
+            <response code="400">Dados inválidos fornecidos</response>
+        </member>
+        <member name="M:TimeWise.API.Controllers.v1.HabitsController.GetById(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Obtém um hábito específico pelo ID
+            </summary>
+            <param name="id">ID único do hábito (GUID)</param>
+            <param name="ct">Token de cancelamento</param>
+            <returns>Hábito encontrado com links HATEOAS</returns>
+            <response code="200">Hábito encontrado</response>
+            <response code="404">Hábito não encontrado</response>
+        </member>
+        <member name="M:TimeWise.API.Controllers.v1.HabitsController.GetPaged(System.Nullable{System.Guid},System.Int32,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Lista hábitos com paginação e filtro opcional por usuário
+            </summary>
+            <param name="usuarioId">ID do usuário para filtrar (opcional)</param>
+            <param name="pageNumber">Número da página (padrão: 1)</param>
+            <param name="pageSize">Tamanho da página (padrão: 10, máximo: 50)</param>
+            <param name="ct">Token de cancelamento</param>
+            <returns>Lista paginada de hábitos</returns>
+            <response code="200">Lista de hábitos retornada com sucesso</response>
+        </member>
+        <member name="M:TimeWise.API.Controllers.v1.HabitsController.Update(System.Guid,TimeWise.API.Dtos.HabitUpdateDto,System.Threading.CancellationToken)">
+            <summary>
+            Atualiza um hábito existente
+            </summary>
+            <param name="id">ID único do hábito a ser atualizado (GUID)</param>
+            <param name="dto">Dados atualizados do hábito</param>
+            <param name="ct">Token de cancelamento</param>
+            <returns>Sem conteúdo (204)</returns>
+            <response code="204">Hábito atualizado com sucesso</response>
+            <response code="404">Hábito não encontrado</response>
+            <response code="400">Dados inválidos fornecidos</response>
+        </member>
+        <member name="M:TimeWise.API.Controllers.v1.HabitsController.Delete(System.Guid,System.Threading.CancellationToken)">
+            <summary>
+            Remove um hábito pelo ID
+            </summary>
+            <param name="id">ID único do hábito a ser removido (GUID)</param>
+            <param name="ct">Token de cancelamento</param>
+            <returns>Sem conteúdo (204)</returns>
+            <response code="204">Hábito removido com sucesso</response>
+            <response code="404">Hábito não encontrado</response>
+        </member>
+        <member name="T:TimeWise.API.Dtos.HabitCreateDto">
+            <summary>
+            DTO para criação de um novo hábito
+            </summary>
+        </member>
+        <member name="M:TimeWise.API.Dtos.HabitCreateDto.#ctor(System.Guid,System.String,System.String,System.String)">
+            <summary>
+            DTO para criação de um novo hábito
+            </summary>
+        </member>
+        <member name="T:TimeWise.API.Dtos.HabitUpdateDto">
+            <summary>
+            DTO para atualização de um hábito existente
+            </summary>
+        </member>
+        <member name="M:TimeWise.API.Dtos.HabitUpdateDto.#ctor(System.Guid,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            DTO para atualização de um hábito existente
+            </summary>
+        </member>
+        <member name="T:TimeWise.API.Dtos.HabitReadDto">
+            <summary>
+            DTO para leitura de um hábito (resposta da API)
+            </summary>
+        </member>
+        <member name="M:TimeWise.API.Dtos.HabitReadDto.#ctor(System.Guid,System.Guid,System.String,System.String,System.String,System.DateTime,System.Boolean,System.Collections.Generic.IEnumerable{System.Object})">
+            <summary>
+            DTO para leitura de um hábito (resposta da API)
+            </summary>
+        </member>
+        <member name="T:TimeWise.API.Helpers.PagedResult`1">
+            <summary>
+            Resultado paginado de uma consulta
+            </summary>
+            <typeparam name="T">Tipo dos itens na lista</typeparam>
+        </member>
+        <member name="P:TimeWise.API.Helpers.PagedResult`1.Items">
+            <summary>
+            Lista de itens da página atual
+            </summary>
+        </member>
+        <member name="P:TimeWise.API.Helpers.PagedResult`1.TotalCount">
+            <summary>
+            Total de registros disponíveis
+            </summary>
+        </member>
+        <member name="P:TimeWise.API.Helpers.PagedResult`1.PageNumber">
+            <summary>
+            Número da página atual
+            </summary>
+        </member>
+        <member name="P:TimeWise.API.Helpers.PagedResult`1.PageSize">
+            <summary>
+            Tamanho da página (quantidade de itens por página)
+            </summary>
+        </member>
+        <member name="P:TimeWise.API.Helpers.PagedResult`1.TotalPages">
+            <summary>
+            Total de páginas disponíveis
+            </summary>
+        </member>
+        <member name="T:TimeWise.API.Middleware.ExceptionHandlingMiddleware">
+            <summary>
+            Middleware para tratamento global de exceções
+            </summary>
+        </member>
+    </members>
+</doc>

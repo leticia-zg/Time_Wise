@@ -1,0 +1,6 @@
+@TimeWise.API_HostAddress = http://localhost:5063
+
+GET {{TimeWise.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

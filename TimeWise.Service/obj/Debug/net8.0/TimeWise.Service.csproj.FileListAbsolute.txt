@@ -1,0 +1,17 @@
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\bin\Debug\net8.0\TimeWise.Service.deps.json
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\bin\Debug\net8.0\TimeWise.Service.dll
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\bin\Debug\net8.0\TimeWise.Service.pdb
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\bin\Debug\net8.0\TimeWise.Core.dll
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\bin\Debug\net8.0\TimeWise.Data.dll
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\bin\Debug\net8.0\TimeWise.Data.pdb
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\bin\Debug\net8.0\TimeWise.Core.pdb
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\obj\Debug\net8.0\TimeWise.Service.csproj.AssemblyReference.cache
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\obj\Debug\net8.0\TimeWise.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\obj\Debug\net8.0\TimeWise.Service.AssemblyInfoInputs.cache
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\obj\Debug\net8.0\TimeWise.Service.AssemblyInfo.cs
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\obj\Debug\net8.0\TimeWise.Service.csproj.CoreCompileInputs.cache
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\obj\Debug\net8.0\TimeWise.DAA54ED4.Up2Date
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\obj\Debug\net8.0\TimeWise.Service.dll
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\obj\Debug\net8.0\refint\TimeWise.Service.dll
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\obj\Debug\net8.0\TimeWise.Service.pdb
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\obj\Debug\net8.0\ref\TimeWise.Service.dll

@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\TimeWise.Data\\Repositories",
+    "\\TimeWise.Service\\Interfaces",
+    "\\TimeWise.Tests"
+  ],
+  "SelectedNode": "\\TimeWise.Tests\\HabitsIntegrationTests.cs",
+  "PreviewInSolutionExplorer": false
+}
