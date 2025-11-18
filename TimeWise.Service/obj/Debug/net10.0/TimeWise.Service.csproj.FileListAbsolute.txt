@@ -15,3 +15,4 @@ C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\obj\Debug\net10.0\
 C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\obj\Debug\net10.0\refint\TimeWise.Service.dll
 C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\obj\Debug\net10.0\TimeWise.Service.pdb
 C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\obj\Debug\net10.0\ref\TimeWise.Service.dll
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Service\obj\Debug\net10.0\TimeWise.Service.sourcelink.json

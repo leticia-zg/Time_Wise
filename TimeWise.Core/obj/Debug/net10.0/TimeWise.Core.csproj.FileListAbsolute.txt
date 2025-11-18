@@ -9,3 +9,4 @@ C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net10.0\Tim
 C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net10.0\refint\TimeWise.Core.dll
 C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net10.0\TimeWise.Core.pdb
 C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net10.0\ref\TimeWise.Core.dll
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net10.0\TimeWise.Core.sourcelink.json
