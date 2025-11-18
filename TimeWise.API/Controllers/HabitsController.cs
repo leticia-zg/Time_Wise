@@ -44,7 +44,8 @@ namespace TimeWise.API.Controllers.v1
 
             var habit = new Habit
             {
-                UsuarioId = dto.UsuarioId,
+                // Gerar UsuarioId automaticamente se não fornecido (já que não há sistema de usuários)
+                UsuarioId = dto.UsuarioId ?? Guid.NewGuid(),
                 Titulo = dto.Titulo,
                 Descricao = dto.Descricao,
                 Tipo = Enum.TryParse<TipoHabit>(dto.Tipo, ignoreCase: true, out var tipoHabit) 

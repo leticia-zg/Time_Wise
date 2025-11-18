@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TimeWise.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef5b104ca4546f91cf060b7f0dd3b111c40b67b2")]
 [assembly: System.Reflection.AssemblyProductAttribute("TimeWise.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TimeWise.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

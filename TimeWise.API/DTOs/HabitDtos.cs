@@ -8,10 +8,9 @@ namespace TimeWise.API.Dtos
     /// </summary>
     public record HabitCreateDto(
         /// <summary>
-        /// ID do usuário proprietário do hábito
+        /// ID do usuário proprietário do hábito (opcional - será gerado automaticamente se não fornecido)
         /// </summary>
-        [Required(ErrorMessage = "UsuarioId é obrigatório")]
-        Guid UsuarioId,
+        Guid? UsuarioId,
         
         /// <summary>
         /// Título do hábito (obrigatório, máximo 200 caracteres)

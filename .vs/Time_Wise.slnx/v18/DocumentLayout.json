@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Let\u00EDcia\\OneDrive\\Desktop\\Time_Wise\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Let\u00EDcia\\OneDrive\\Desktop\\Time_Wise\\TimeWise.Tests\\HabitsIntegrationTests.cs||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TimeWise.Tests\\HabitsIntegrationTests.cs||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Let\u00EDcia\\OneDrive\\Desktop\\Time_Wise\\TimeWise.Tests\\HabitsIntegrationTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TimeWise.Tests\\HabitsIntegrationTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Let\u00EDcia\\OneDrive\\Desktop\\Time_Wise\\TimeWise.Tests\\TimeWise.Tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -76,9 +76,9 @@
               "RelativeDocumentMoniker": "TimeWise.Tests\\HabitsIntegrationTests.cs",
               "ToolTip": "C:\\Users\\Let\u00EDcia\\OneDrive\\Desktop\\Time_Wise\\TimeWise.Tests\\HabitsIntegrationTests.cs",
               "RelativeToolTip": "TimeWise.Tests\\HabitsIntegrationTests.cs",
-              "ViewState": "AgIAANsAAAAAAAAAAAAAAAcBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T22:17:09.165Z",
+              "WhenOpened": "2025-11-18T13:32:48.55Z",
               "EditorCaption": ""
             },
             {
@@ -104,8 +104,7 @@
               "RelativeToolTip": "TimeWise.API\\Program.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAAAIMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T22:16:20.69Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-16T22:16:20.69Z"
             },
             {
               "$type": "Document",
@@ -117,8 +116,7 @@
               "RelativeToolTip": "TimeWise.API\\Controllers\\HabitsController.cs",
               "ViewState": "AgIAAIgAAAAAAAAAAAAYwKsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T22:15:48.403Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-16T22:15:48.403Z"
             },
             {
               "$type": "Document",
@@ -130,8 +128,7 @@
               "RelativeToolTip": "TimeWise.API\\Helpers\\PaginationResponse.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T22:14:57.834Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-16T22:14:57.834Z"
             },
             {
               "$type": "Document",
@@ -143,8 +140,7 @@
               "RelativeToolTip": "TimeWise.API\\DTOs\\HabitDtos.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAHQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T22:14:24.899Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-16T22:14:24.899Z"
             },
             {
               "$type": "Document",
@@ -156,8 +152,7 @@
               "RelativeToolTip": "TimeWise.API\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-16T22:13:18.613Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-16T22:13:18.613Z"
             },
             {
               "$type": "Document",
@@ -169,8 +164,7 @@
               "RelativeToolTip": "TimeWise.API\\TimeWise.API.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-11-16T22:12:38.859Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-16T22:12:38.859Z"
             },
             {
               "$type": "Document",
@@ -182,8 +176,7 @@
               "RelativeToolTip": "TimeWise.Service\\HabitService.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAcwBsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T22:12:18.064Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-16T22:12:18.064Z"
             },
             {
               "$type": "Document",
@@ -195,8 +188,7 @@
               "RelativeToolTip": "TimeWise.Service\\Interfaces\\IHabitService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T22:11:17.212Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-16T22:11:17.212Z"
             },
             {
               "$type": "Document",
@@ -208,8 +200,7 @@
               "RelativeToolTip": "TimeWise.Data\\Repositories\\HabitRepository.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAAcwDQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T22:08:55.809Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-16T22:08:55.809Z"
             },
             {
               "$type": "Document",
@@ -221,8 +212,7 @@
               "RelativeToolTip": "TimeWise.Data\\TimeWiseDbContext.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAcwBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T22:07:59.991Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-16T22:07:59.991Z"
             },
             {
               "$type": "Document",
@@ -234,8 +224,7 @@
               "RelativeToolTip": "TimeWise.Core\\Interfaces\\IHabityRepository.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAcwA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T22:07:17.174Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-16T22:07:17.174Z"
             },
             {
               "$type": "Document",
@@ -247,8 +236,7 @@
               "RelativeToolTip": "TimeWise.Core\\Models\\Habit.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAcwAgAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T22:05:48.646Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-16T22:05:48.646Z"
             }
           ]
         }

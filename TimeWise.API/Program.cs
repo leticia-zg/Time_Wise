@@ -22,11 +22,21 @@ var configuration = builder.Configuration;
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
-// API Versioning para Swagger
+// API Versioning - DEVE ser registrado ANTES do AddVersionedApiExplorer
+builder.Services.AddApiVersioning(options =>
+{
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    options.DefaultApiVersion = new ApiVersion(1, 0);
+    options.ReportApiVersions = true;
+    options.ApiVersionReader = new UrlSegmentApiVersionReader();
+});
+
+// API Versioning para Swagger - DEVE ser registrado DEPOIS do AddApiVersioning
 builder.Services.AddVersionedApiExplorer(setup =>
 {
-    setup.GroupNameFormat = "'v'VVV";
+    setup.GroupNameFormat = "'v'VVV"; // Formato: v1.0, v2.0
     setup.SubstituteApiVersionInUrl = true;
+    setup.AssumeDefaultVersionWhenUnspecified = true;
 });
 
 // Swagger Configuration
@@ -36,8 +46,16 @@ builder.Services.AddSwaggerGen(options =>
     options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
     {
         Version = "v1.0",
-        Title = "TimeWise API",
-        Description = "O TimeWise é uma aplicação que permite que usuários criem e gerenciem hábitos como pausas, postura e hidratação durante o trabalho."
+        Title = "TimeWise API v1.0",
+        Description = "O TimeWise é uma aplicação que permite que usuários criem e gerenciem hábitos como pausas, postura e hidratação durante o trabalho. Versão 1.0 da API."
+    });
+
+    // Configuração básica do Swagger para v2
+    options.SwaggerDoc("v2", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Version = "v2.0",
+        Title = "TimeWise API v2.0",
+        Description = "O TimeWise é uma aplicação que permite que usuários criem e gerenciem hábitos como pausas, postura e hidratação durante o trabalho. Versão 2.0 da API."
     });
 
     // Incluir comentários XML
@@ -54,7 +72,7 @@ builder.Services.AddSwaggerGen(options =>
     // Configurar esquemas para evitar conflitos de nomes
     options.CustomSchemaIds(type => type.FullName?.Replace("+", "."));
     
-    // Agrupar por nome do controller (sem tags extras)
+    // Agrupar por nome do controller
     options.TagActionsBy(api =>
     {
         var controllerName = api.ActionDescriptor?.RouteValues?.ContainsKey("controller") == true
@@ -63,17 +81,42 @@ builder.Services.AddSwaggerGen(options =>
         return new[] { controllerName };
     });
     
-    // Incluir todos os endpoints sem agrupar por versão
-    options.DocInclusionPredicate((name, api) => true);
-});
-
-// API Versioning
-builder.Services.AddApiVersioning(options =>
-{
-    options.AssumeDefaultVersionWhenUnspecified = true;
-    options.DefaultApiVersion = new ApiVersion(1, 0);
-    options.ReportApiVersions = true;
-    options.ApiVersionReader = new UrlSegmentApiVersionReader();
+    // Filtrar endpoints por versão usando o ApiExplorer
+    // O ApiExplorer já agrupa os endpoints por versão automaticamente através do GroupName
+    options.DocInclusionPredicate((docName, apiDesc) =>
+    {
+        // Obter o GroupName do ApiExplorer (formato: "v1.0" ou "v2.0")
+        var groupName = apiDesc.GroupName ?? string.Empty;
+        
+        // Mapear o nome do documento Swagger para o formato do GroupName
+        var expectedGroupName = docName switch
+        {
+            "v1" => "v1.0",
+            "v2" => "v2.0",
+            _ => string.Empty
+        };
+        
+        // Se não há GroupName esperado, não incluir
+        if (string.IsNullOrEmpty(expectedGroupName))
+            return false;
+        
+        // Verificar se o GroupName corresponde exatamente
+        if (!string.IsNullOrEmpty(groupName) && groupName.Equals(expectedGroupName, StringComparison.OrdinalIgnoreCase))
+        {
+            return true;
+        }
+        
+        // Fallback: verificar pelo namespace do controller quando GroupName não corresponde ou está vazio
+        var displayName = apiDesc.ActionDescriptor?.DisplayName ?? string.Empty;
+        
+        // Verificar pelo namespace completo do controller (case-insensitive)
+        if (docName == "v1" && displayName.IndexOf("Controllers.v1", StringComparison.OrdinalIgnoreCase) >= 0)
+            return true;
+        if (docName == "v2" && displayName.IndexOf("Controllers.v2", StringComparison.OrdinalIgnoreCase) >= 0)
+            return true;
+        
+        return false;
+    });
 });
 
 // DbContext - Oracle
@@ -116,7 +159,9 @@ app.UseMiddleware<TimeWise.API.Middleware.ExceptionHandlingMiddleware>();
 app.UseSwagger();
 app.UseSwaggerUI(options =>
 {
-    options.SwaggerEndpoint("/swagger/v1/swagger.json", "TimeWise API");
+    // Configurar endpoints para ambas as versões
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "TimeWise API v1.0");
+    options.SwaggerEndpoint("/swagger/v2/swagger.json", "TimeWise API v2.0");
     options.RoutePrefix = "swagger";
     options.DocumentTitle = "TimeWise API - Documentação";
     options.DefaultModelsExpandDepth(-1);
