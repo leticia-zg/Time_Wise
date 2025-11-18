@@ -62,64 +62,6 @@
             <response code="204">Hábito removido com sucesso</response>
             <response code="404">Hábito não encontrado</response>
         </member>
-        <member name="T:TimeWise.API.Controllers.v2.HabitsController">
-            <summary>
-            Habits - Versão 2.0
-            </summary>
-        </member>
-        <member name="M:TimeWise.API.Controllers.v2.HabitsController.Create(TimeWise.API.Dtos.HabitCreateDto,System.Threading.CancellationToken)">
-            <summary>
-            Cria um novo hábito (v2.0)
-            </summary>
-            <param name="dto">Dados do hábito a ser criado</param>
-            <param name="ct">Token de cancelamento</param>
-            <returns>Hábito criado com links HATEOAS</returns>
-            <response code="201">Hábito criado com sucesso</response>
-            <response code="400">Dados inválidos fornecidos</response>
-        </member>
-        <member name="M:TimeWise.API.Controllers.v2.HabitsController.GetById(System.Guid,System.Threading.CancellationToken)">
-            <summary>
-            Obtém um hábito específico pelo ID (v2.0)
-            </summary>
-            <param name="id">ID único do hábito (GUID)</param>
-            <param name="ct">Token de cancelamento</param>
-            <returns>Hábito encontrado com links HATEOAS</returns>
-            <response code="200">Hábito encontrado</response>
-            <response code="404">Hábito não encontrado</response>
-        </member>
-        <member name="M:TimeWise.API.Controllers.v2.HabitsController.GetPaged(System.Nullable{System.Guid},System.Int32,System.Int32,System.Threading.CancellationToken)">
-            <summary>
-            Lista hábitos com paginação e filtro opcional por usuário (v2.0)
-            </summary>
-            <param name="usuarioId">ID do usuário para filtrar (opcional)</param>
-            <param name="pageNumber">Número da página (padrão: 1)</param>
-            <param name="pageSize">Tamanho da página (padrão: 10, máximo: 50)</param>
-            <param name="ct">Token de cancelamento</param>
-            <returns>Lista paginada de hábitos</returns>
-            <response code="200">Lista de hábitos retornada com sucesso</response>
-        </member>
-        <member name="M:TimeWise.API.Controllers.v2.HabitsController.Update(System.Guid,TimeWise.API.Dtos.HabitUpdateDto,System.Threading.CancellationToken)">
-            <summary>
-            Atualiza um hábito existente (v2.0)
-            </summary>
-            <param name="id">ID único do hábito a ser atualizado (GUID)</param>
-            <param name="dto">Dados atualizados do hábito</param>
-            <param name="ct">Token de cancelamento</param>
-            <returns>Sem conteúdo (204)</returns>
-            <response code="204">Hábito atualizado com sucesso</response>
-            <response code="404">Hábito não encontrado</response>
-            <response code="400">Dados inválidos fornecidos</response>
-        </member>
-        <member name="M:TimeWise.API.Controllers.v2.HabitsController.Delete(System.Guid,System.Threading.CancellationToken)">
-            <summary>
-            Remove um hábito pelo ID (v2.0)
-            </summary>
-            <param name="id">ID único do hábito a ser removido (GUID)</param>
-            <param name="ct">Token de cancelamento</param>
-            <returns>Sem conteúdo (204)</returns>
-            <response code="204">Hábito removido com sucesso</response>
-            <response code="404">Hábito não encontrado</response>
-        </member>
         <member name="T:TimeWise.API.Dtos.HabitCreateDto">
             <summary>
             DTO para criação de um novo hábito

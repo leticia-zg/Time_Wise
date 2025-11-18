@@ -82,28 +82,6 @@ namespace TimeWise.Tests
 		}
 
 		[Fact]
-		public async Task Post_CreateHabit_WithoutUsuarioId_GeneratesAutomatically()
-		{
-			var client = _factory.CreateClient();
-
-			// Criar hábito sem fornecer UsuarioId
-			var payload = new
-			{
-				Titulo = "Hábito sem UsuarioId",
-				Descricao = "Teste de geração automática",
-				Tipo = "PAUSA"
-			};
-
-			var response = await client.PostAsJsonAsync("/api/v1/Habits", payload);
-			response.StatusCode.Should().Be(HttpStatusCode.Created);
-
-			var created = await response.Content.ReadFromJsonAsync<dynamic>();
-			// Verificar se o UsuarioId foi gerado automaticamente (não deve ser vazio)
-			Guid usuarioId = Guid.Parse((string)created.usuarioId);
-			usuarioId.Should().NotBeEmpty();
-		}
-
-		[Fact]
 		public async Task Get_GetById_WithInvalidId_Returns_NotFound()
 		{
 			var client = _factory.CreateClient();

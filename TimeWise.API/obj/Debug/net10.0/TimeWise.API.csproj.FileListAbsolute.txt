@@ -158,4 +158,3 @@ C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.API\obj\Debug\net10.0\ref\
 C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.API\bin\Debug\net10.0\HealthChecks.Oracle.dll
 C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.API\bin\Debug\net10.0\HealthChecks.UI.Client.dll
 C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.API\bin\Debug\net10.0\HealthChecks.UI.Core.dll
-C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.API\obj\Debug\net10.0\TimeWise.API.sourcelink.json
