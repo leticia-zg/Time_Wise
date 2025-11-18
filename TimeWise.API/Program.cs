@@ -36,16 +36,8 @@ builder.Services.AddSwaggerGen(options =>
     options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
     {
         Version = "v1.0",
-        Title = "TimeWise API v1.0",
-        Description = "O TimeWise é uma aplicação que permite que usuários criem e gerenciem hábitos como pausas, postura e hidratação durante o trabalho. Versão 1.0 da API."
-    });
-
-    // Configuração básica do Swagger para v2
-    options.SwaggerDoc("v2", new Microsoft.OpenApi.Models.OpenApiInfo
-    {
-        Version = "v2.0",
-        Title = "TimeWise API v2.0",
-        Description = "O TimeWise é uma aplicação que permite que usuários criem e gerenciem hábitos como pausas, postura e hidratação durante o trabalho. Versão 2.0 da API."
+        Title = "TimeWise API",
+        Description = "O TimeWise é uma aplicação que permite que usuários criem e gerenciem hábitos como pausas, postura e hidratação durante o trabalho."
     });
 
     // Incluir comentários XML
@@ -71,26 +63,8 @@ builder.Services.AddSwaggerGen(options =>
         return new[] { controllerName };
     });
     
-    // Filtrar endpoints por versão usando o ApiExplorer
-    // O ApiExplorer já agrupa os endpoints por versão automaticamente através do GroupName
-    options.DocInclusionPredicate((docName, apiDesc) =>
-    {
-        // O ApiExplorer agrupa por versão usando o GroupName configurado no AddVersionedApiExplorer
-        // O GroupNameFormat é "'v'VVV", então v1.0 vira "v1.0" e v2.0 vira "v2.0"
-        // Mas o SwaggerDoc usa "v1" e "v2", então precisamos mapear
-        var groupName = apiDesc.GroupName ?? string.Empty;
-        
-        // Mapear o nome do documento para o formato do GroupName
-        var expectedGroupName = docName switch
-        {
-            "v1" => "v1.0",
-            "v2" => "v2.0",
-            _ => docName
-        };
-        
-        // Verificar se o GroupName corresponde ao documento
-        return groupName == expectedGroupName;
-    });
+    // Incluir todos os endpoints sem agrupar por versão
+    options.DocInclusionPredicate((name, api) => true);
 });
 
 // API Versioning
@@ -142,9 +116,7 @@ app.UseMiddleware<TimeWise.API.Middleware.ExceptionHandlingMiddleware>();
 app.UseSwagger();
 app.UseSwaggerUI(options =>
 {
-    // Configurar endpoints para ambas as versões
-    options.SwaggerEndpoint("/swagger/v1/swagger.json", "TimeWise API v1.0");
-    options.SwaggerEndpoint("/swagger/v2/swagger.json", "TimeWise API v2.0");
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "TimeWise API");
     options.RoutePrefix = "swagger";
     options.DocumentTitle = "TimeWise API - Documentação";
     options.DefaultModelsExpandDepth(-1);

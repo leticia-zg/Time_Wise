@@ -29,25 +29,18 @@ TimeWise/
 
 ## 🔄 Versionamento da API
 
-A API utiliza **versionamento por URL** para garantir compatibilidade e evolução controlada. O sistema permite que múltiplas versões coexistam, garantindo que clientes existentes continuem funcionando enquanto novas funcionalidades são introduzidas.
+A API utiliza versionamento por URL para garantir compatibilidade e evolução controlada. As versões são estruturadas da seguinte forma:
 
 ### Versões Disponíveis
 
-A API atualmente suporta **duas versões**:
-
-- **v1.0**: Primeira versão estável da API
+- **v1.0** (Atual): Primeira versão estável da API
   - Endpoint base: `/api/v1/`
-  - Status: ✅ Ativa e suportada
 
-- **v2.0**: Segunda versão da API
-  - Endpoint base: `/api/v2/`
-  - Status: ✅ Ativa e suportada
+### Como Usar o Versionamento
 
-### Estrutura de Rotas
+#### Versão Atual (v1.0)
 
-Todas as rotas seguem o padrão `/api/v{versão}/{controller}`:
-
-#### Versão 1.0
+Todas as rotas seguem o padrão `/api/v1/{controller}`:
 
 ```http
 GET    /api/v1/Habits
@@ -57,21 +50,10 @@ PUT    /api/v1/Habits/{id}
 DELETE /api/v1/Habits/{id}
 ```
 
-#### Versão 2.0
-
-```http
-GET    /api/v2/Habits
-GET    /api/v2/Habits/{id}
-POST   /api/v2/Habits
-PUT    /api/v2/Habits/{id}
-DELETE /api/v2/Habits/{id}
-```
-
-### Exemplos de Requisição
-
-#### Criar um hábito na v1.0
+#### Exemplo de Requisição
 
 ```bash
+# Criar um hábito
 POST /api/v1/Habits
 Content-Type: application/json
 
@@ -83,47 +65,22 @@ Content-Type: application/json
 }
 ```
 
-#### Criar um hábito na v2.0
+#### Versões Futuras (v2.0)
 
-```bash
-POST /api/v2/Habits
-Content-Type: application/json
+Quando uma nova versão for necessária, será criada uma nova rota:
 
-{
-  "usuarioId": "123e4567-e89b-12d3-a456-426614174000",
-  "titulo": "Pausa para alongamento",
-  "descricao": "Levantar e fazer alongamento a cada 2 horas",
-  "tipo": "PAUSA"
-}
+```http
+GET    /api/v2/Habits
+POST   /api/v2/Habits
 ```
 
-### Organização do Código
-
-Os controllers são organizados por namespace e diretório para facilitar a manutenção:
-
-```
-TimeWise.API/
-└── Controllers/
-    ├── HabitsController.cs          # v1.0 (namespace: Controllers.v1)
-    └── v2/
-        └── HabitsController.cs      # v2.0 (namespace: Controllers.v2)
-```
-
-Cada versão possui seu próprio controller, permitindo evoluções independentes sem quebrar compatibilidade com versões anteriores.
+A versão anterior (v1.0) continuará funcionando para garantir compatibilidade com clientes existentes.
 
 ### Configuração do Versionamento
 
 O versionamento é configurado no `Program.cs`:
 
 ```csharp
-// API Versioning para Swagger
-builder.Services.AddVersionedApiExplorer(setup =>
-{
-    setup.GroupNameFormat = "'v'VVV";
-    setup.SubstituteApiVersionInUrl = true;
-});
-
-// API Versioning
 builder.Services.AddApiVersioning(options =>
 {
     options.AssumeDefaultVersionWhenUnspecified = true;
@@ -134,52 +91,19 @@ builder.Services.AddApiVersioning(options =>
 ```
 
 **Comportamento:**
-- `AssumeDefaultVersionWhenUnspecified = true`: Se nenhuma versão for especificada na URL, usa a versão padrão (v1.0)
+- `AssumeDefaultVersionWhenUnspecified = true`: Se nenhuma versão for especificada, usa a versão padrão (v1.0)
 - `DefaultApiVersion = new ApiVersion(1, 0)`: Define v1.0 como versão padrão
-- `ReportApiVersions = true`: Informa quais versões estão disponíveis nos headers da resposta HTTP
-- `UrlSegmentApiVersionReader`: Lê a versão diretamente do segmento da URL (`/api/v1/...` ou `/api/v2/...`)
-
-### Documentação Swagger
-
-O Swagger está configurado para exibir ambas as versões:
-
-- **Swagger UI**: Acesse `/swagger` para ver a documentação interativa
-- **Seleção de Versão**: Use o dropdown no topo do Swagger UI para alternar entre v1.0 e v2.0
-- **Endpoints Separados**: Cada versão possui sua própria documentação OpenAPI
+- `ReportApiVersions = true`: Informa quais versões estão disponíveis nos headers da resposta
+- `UrlSegmentApiVersionReader`: Lê a versão diretamente da URL (`/api/v1/...`)
 
 ### Headers de Resposta
 
-As respostas HTTP incluem headers informando as versões disponíveis:
+As respostas incluem headers informando as versões disponíveis:
 
 ```
-api-supported-versions: 1.0, 2.0
+api-supported-versions: 1.0
 api-deprecated-versions: (nenhuma no momento)
 ```
-
-### Política de Compatibilidade
-
-- ✅ **Versões antigas são mantidas**: A v1.0 continuará funcionando mesmo após o lançamento de novas versões
-- ✅ **Evolução independente**: Cada versão pode evoluir sem afetar as outras
-- ✅ **Migração gradual**: Clientes podem migrar para novas versões no seu próprio ritmo
-- ✅ **Documentação separada**: Cada versão possui documentação própria no Swagger
-
-### Quando Criar uma Nova Versão
-
-Uma nova versão deve ser criada quando:
-
-- Mudanças que quebram compatibilidade com versões anteriores
-- Alterações significativas na estrutura de dados (DTOs)
-- Mudanças em comportamentos existentes que podem afetar clientes
-- Introdução de novos recursos que alteram o contrato da API
-
-### Migração entre Versões
-
-Para migrar de v1.0 para v2.0:
-
-1. Atualize a URL base de `/api/v1/` para `/api/v2/`
-2. Verifique se há mudanças nos DTOs ou comportamentos
-3. Teste todas as funcionalidades utilizadas
-4. Atualize a documentação interna se necessário
 
 ## 🗄️ Banco de Dados
 
@@ -251,8 +175,6 @@ dotnet test --filter "FullyQualifiedName~HabitsIntegrationTests"
 
 ### Habits
 
-#### Versão 1.0
-
 | Método | Endpoint | Descrição |
 |--------|----------|-----------|
 | GET | `/api/v1/Habits` | Lista hábitos com paginação |
@@ -260,16 +182,6 @@ dotnet test --filter "FullyQualifiedName~HabitsIntegrationTests"
 | POST | `/api/v1/Habits` | Cria um novo hábito |
 | PUT | `/api/v1/Habits/{id}` | Atualiza um hábito existente |
 | DELETE | `/api/v1/Habits/{id}` | Remove um hábito |
-
-#### Versão 2.0
-
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| GET | `/api/v2/Habits` | Lista hábitos com paginação |
-| GET | `/api/v2/Habits/{id}` | Obtém um hábito específico |
-| POST | `/api/v2/Habits` | Cria um novo hábito |
-| PUT | `/api/v2/Habits/{id}` | Atualiza um hábito existente |
-| DELETE | `/api/v2/Habits/{id}` | Remove um hábito |
 
 ### Parâmetros de Paginação
 
@@ -303,17 +215,17 @@ A API implementa HATEOAS (Hypermedia as the Engine of Application State), fornec
   "links": [
     {
       "rel": "self",
-      "href": "/api/v{version}/Habits/{id}",
+      "href": "/api/v1/Habits/{id}",
       "method": "GET"
     },
     {
       "rel": "update",
-      "href": "/api/v{version}/Habits/{id}",
+      "href": "/api/v1/Habits/{id}",
       "method": "PUT"
     },
     {
       "rel": "delete",
-      "href": "/api/v{version}/Habits/{id}",
+      "href": "/api/v1/Habits/{id}",
       "method": "DELETE"
     }
   ]
