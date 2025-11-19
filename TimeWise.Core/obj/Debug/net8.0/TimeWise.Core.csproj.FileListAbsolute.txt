@@ -5,6 +5,7 @@ C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net8.0\Time
 C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net8.0\TimeWise.Core.AssemblyInfoInputs.cache
 C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net8.0\TimeWise.Core.AssemblyInfo.cs
 C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net8.0\TimeWise.Core.csproj.CoreCompileInputs.cache
+C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net8.0\TimeWise.Core.sourcelink.json
 C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net8.0\TimeWise.Core.dll
 C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net8.0\refint\TimeWise.Core.dll
 C:\Users\Letícia\OneDrive\Desktop\Time_Wise\TimeWise.Core\obj\Debug\net8.0\TimeWise.Core.pdb

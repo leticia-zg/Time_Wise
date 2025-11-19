@@ -1,1 +1,11 @@
-{"Version":1,"Hash":"PtKFO7eHeLSeqY/jpQNNvreBA6GilrxEWfs4r3hFJxc=","Source":"TimeWise.API","BasePath":"/","Mode":"Root","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
+{
+  "Version": 1,
+  "Hash": "3iCtD1TunzEX8MLmkHj2MuQvWJ/ERB+zPL9CCrUrpcA=",
+  "Source": "TimeWise.API",
+  "BasePath": "_content/TimeWise.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

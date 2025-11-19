@@ -1,7 +1,0 @@
-<Solution>
-  <Project Path="TimeWise.API/TimeWise.API.csproj" />
-  <Project Path="TimeWise.Core/TimeWise.Core.csproj" />
-  <Project Path="TimeWise.Data/TimeWise.Data.csproj" />
-  <Project Path="TimeWise.Service/TimeWise.Service.csproj" />
-  <Project Path="TimeWise.Tests/TimeWise.Tests.csproj" />
-</Solution>

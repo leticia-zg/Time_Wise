@@ -108,7 +108,6 @@ namespace TimeWise.API.Dtos
         /// Indica se o hábito foi concluído
         /// </summary>
         bool Concluido,
-        
         /// <summary>
         /// Links HATEOAS para ações relacionadas ao hábito
         /// </summary>

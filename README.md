@@ -149,18 +149,18 @@ Configure a connection string no `appsettings.json`:
 
 O projeto inclui testes automatizados usando **xUnit**:
 
-### Testes de Integração
+### Testes Unitários
 
-Localizados em `TimeWise.Tests/HabitsIntegrationTests.cs`, testam o comportamento completo da API:
+Localizados em `TimeWise.Tests/HabitServiceTests.cs`, testam a lógica de negócio do serviço:
 
 - Criação de hábitos
-- Consulta paginada
-- Validação de status codes
-- Verificação de headers
+- Consulta por ID
+- Consulta paginada (com e sem filtro por usuário)
+- Atualização de hábitos
+- Remoção de hábitos
 
 ### Executar Testes
 
-```bash
 # Executar todos os testes
 dotnet test
 
@@ -168,7 +168,7 @@ dotnet test
 dotnet test --verbosity normal
 
 # Executar testes específicos
-dotnet test --filter "FullyQualifiedName~HabitsIntegrationTests"
+dotnet test --filter "FullyQualifiedName~HabitServiceTests"
 ```
 
 ## 📡 Endpoints da API

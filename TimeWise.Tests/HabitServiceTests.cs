@@ -1,5 +1,11 @@
-using FluentAssertions;
+#nullable enable
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using Moq;
+using TimeWise.Core.Enums;
 using TimeWise.Core.Interfaces;
 using TimeWise.Core.Models;
 using TimeWise.Service.Services;
@@ -10,6 +16,7 @@ namespace TimeWise.Tests
 {
 	/// <summary>
 	/// Testes unitários para HabitService
+	/// Testa a lógica de negócio do serviço de hábitos usando mocks do repositório
 	/// </summary>
 	public class HabitServiceTests
 	{
@@ -22,16 +29,19 @@ namespace TimeWise.Tests
 			_service = new HabitService(_mockRepository.Object);
 		}
 
+		/// <summary>
+		/// Testa se o método CreateAsync chama corretamente o repositório AddAsync
+		/// </summary>
 		[Fact]
 		public async Task CreateAsync_Should_Call_Repository_AddAsync()
 		{
-			// Arrange
+			// Arrange - Preparar dados de teste
 			var habit = new Habit
 			{
 				Id = Guid.NewGuid(),
 				UsuarioId = Guid.NewGuid(),
 				Titulo = "Teste",
-				Tipo = "PAUSA"
+				Tipo = TipoHabit.PAUSA
 			};
 
 			_mockRepository.Setup(r => r.AddAsync(It.IsAny<Habit>(), It.IsAny<CancellationToken>()))
@@ -41,22 +51,25 @@ namespace TimeWise.Tests
 			var result = await _service.CreateAsync(habit);
 
 			// Assert
-			result.Should().NotBeNull();
-			result.Id.Should().Be(habit.Id);
+			Assert.NotNull(result);
+			Assert.Equal(habit.Id, result.Id);
 			_mockRepository.Verify(r => r.AddAsync(habit, It.IsAny<CancellationToken>()), Times.Once);
 		}
 
+		/// <summary>
+		/// Testa se GetByIdAsync retorna o hábito quando ele existe no repositório
+		/// </summary>
 		[Fact]
 		public async Task GetByIdAsync_Should_Return_Habit_When_Exists()
 		{
-			// Arrange
+			// Arrange - Preparar dados de teste
 			var habitId = Guid.NewGuid();
 			var habit = new Habit
 			{
 				Id = habitId,
 				UsuarioId = Guid.NewGuid(),
 				Titulo = "Teste",
-				Tipo = "PAUSA"
+				Tipo = TipoHabit.PAUSA
 			};
 
 			_mockRepository.Setup(r => r.GetByIdAsync(habitId, It.IsAny<CancellationToken>()))
@@ -66,15 +79,18 @@ namespace TimeWise.Tests
 			var result = await _service.GetByIdAsync(habitId);
 
 			// Assert
-			result.Should().NotBeNull();
-			result!.Id.Should().Be(habitId);
+			Assert.NotNull(result);
+			Assert.Equal(habitId, result!.Id);
 			_mockRepository.Verify(r => r.GetByIdAsync(habitId, It.IsAny<CancellationToken>()), Times.Once);
 		}
 
+		/// <summary>
+		/// Testa se GetByIdAsync retorna null quando o hábito não existe no repositório
+		/// </summary>
 		[Fact]
 		public async Task GetByIdAsync_Should_Return_Null_When_Not_Exists()
 		{
-			// Arrange
+			// Arrange - Preparar dados de teste
 			var habitId = Guid.NewGuid();
 
 			_mockRepository.Setup(r => r.GetByIdAsync(habitId, It.IsAny<CancellationToken>()))
@@ -84,18 +100,21 @@ namespace TimeWise.Tests
 			var result = await _service.GetByIdAsync(habitId);
 
 			// Assert
-			result.Should().BeNull();
+			Assert.Null(result);
 			_mockRepository.Verify(r => r.GetByIdAsync(habitId, It.IsAny<CancellationToken>()), Times.Once);
 		}
 
+		/// <summary>
+		/// Testa se GetPagedAsync retorna resultados paginados corretamente
+		/// </summary>
 		[Fact]
 		public async Task GetPagedAsync_Should_Return_Paged_Results()
 		{
-			// Arrange
+			// Arrange - Preparar dados de teste
 			var habits = new List<Habit>
 			{
-				new Habit { Id = Guid.NewGuid(), Titulo = "Hábito 1", Tipo = "PAUSA" },
-				new Habit { Id = Guid.NewGuid(), Titulo = "Hábito 2", Tipo = "POSTURA" }
+				new Habit { Id = Guid.NewGuid(), Titulo = "Hábito 1", Tipo = TipoHabit.PAUSA },
+				new Habit { Id = Guid.NewGuid(), Titulo = "Hábito 2", Tipo = TipoHabit.POSTURA }
 			};
 
 			_mockRepository.Setup(r => r.GetPagedAsync(1, 10, null, It.IsAny<CancellationToken>()))
@@ -105,19 +124,22 @@ namespace TimeWise.Tests
 			var (items, totalCount) = await _service.GetPagedAsync(1, 10, null);
 
 			// Assert
-			items.Should().HaveCount(2);
-			totalCount.Should().Be(2);
+			Assert.Equal(2, items.Count());
+			Assert.Equal(2, totalCount);
 			_mockRepository.Verify(r => r.GetPagedAsync(1, 10, null, It.IsAny<CancellationToken>()), Times.Once);
 		}
 
+		/// <summary>
+		/// Testa se GetPagedAsync filtra corretamente por UsuarioId quando fornecido
+		/// </summary>
 		[Fact]
 		public async Task GetPagedAsync_With_UsuarioId_Should_Filter_By_User()
 		{
-			// Arrange
+			// Arrange - Preparar dados de teste
 			var usuarioId = Guid.NewGuid();
 			var habits = new List<Habit>
 			{
-				new Habit { Id = Guid.NewGuid(), UsuarioId = usuarioId, Titulo = "Hábito 1", Tipo = "PAUSA" }
+				new Habit { Id = Guid.NewGuid(), UsuarioId = usuarioId, Titulo = "Hábito 1", Tipo = TipoHabit.PAUSA }
 			};
 
 			_mockRepository.Setup(r => r.GetPagedAsync(1, 10, usuarioId, It.IsAny<CancellationToken>()))
@@ -127,21 +149,24 @@ namespace TimeWise.Tests
 			var (items, totalCount) = await _service.GetPagedAsync(1, 10, usuarioId);
 
 			// Assert
-			items.Should().HaveCount(1);
-			totalCount.Should().Be(1);
+			Assert.Single(items);
+			Assert.Equal(1, totalCount);
 			_mockRepository.Verify(r => r.GetPagedAsync(1, 10, usuarioId, It.IsAny<CancellationToken>()), Times.Once);
 		}
 
+		/// <summary>
+		/// Testa se o método UpdateAsync chama corretamente o repositório UpdateAsync
+		/// </summary>
 		[Fact]
 		public async Task UpdateAsync_Should_Call_Repository_UpdateAsync()
 		{
-			// Arrange
+			// Arrange - Preparar dados de teste
 			var habit = new Habit
 			{
 				Id = Guid.NewGuid(),
 				UsuarioId = Guid.NewGuid(),
 				Titulo = "Hábito atualizado",
-				Tipo = "PAUSA"
+				Tipo = TipoHabit.PAUSA
 			};
 
 			_mockRepository.Setup(r => r.UpdateAsync(It.IsAny<Habit>(), It.IsAny<CancellationToken>()))
@@ -154,10 +179,13 @@ namespace TimeWise.Tests
 			_mockRepository.Verify(r => r.UpdateAsync(habit, It.IsAny<CancellationToken>()), Times.Once);
 		}
 
+		/// <summary>
+		/// Testa se o método DeleteAsync chama corretamente o repositório DeleteAsync
+		/// </summary>
 		[Fact]
 		public async Task DeleteAsync_Should_Call_Repository_DeleteAsync()
 		{
-			// Arrange
+			// Arrange - Preparar dados de teste
 			var habitId = Guid.NewGuid();
 
 			_mockRepository.Setup(r => r.DeleteAsync(habitId, It.IsAny<CancellationToken>()))

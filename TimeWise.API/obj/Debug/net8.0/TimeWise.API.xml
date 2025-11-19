@@ -6,7 +6,7 @@
     <members>
         <member name="T:TimeWise.API.Controllers.v1.HabitsController">
             <summary>
-            Controller para gerenciamento de hábitos relacionados ao tema "O Futuro do Trabalho"
+            Habits
             </summary>
         </member>
         <member name="M:TimeWise.API.Controllers.v1.HabitsController.Create(TimeWise.API.Dtos.HabitCreateDto,System.Threading.CancellationToken)">
@@ -121,6 +121,11 @@
         <member name="P:TimeWise.API.Helpers.PagedResult`1.TotalPages">
             <summary>
             Total de páginas disponíveis
+            </summary>
+        </member>
+        <member name="T:TimeWise.API.Middleware.ExceptionHandlingMiddleware">
+            <summary>
+            Middleware para tratamento global de exceções
             </summary>
         </member>
     </members>
